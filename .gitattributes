@@ -1,0 +1,3 @@
+# Windows installer files keep CRLF line endings exactly as stored
+*.bat -text
+*.ps1 -text
