@@ -7,25 +7,25 @@ import { FxProps, Out, Vid, cue, fitSize, headAt, isVo } from "./common";
    Same contract as library.tsx: cue times in `c`, content in `p`. Every effect is an overlay on the speaker,
    and works on a voice-over segment too (Vid draws the brand background, `place` centres the block). */
 
-const on0 = (c: Record<string, number>, s: { start: number }) => cue(c, "on", s.start + 0.3);
-const MONO = "Consolas, 'Courier New', monospace";
-const EMOJI = "'Segoe UI Emoji', 'Apple Color Emoji', sans-serif";
-const dark: React.CSSProperties = {
+export const on0 = (c: Record<string, number>, s: { start: number }) => cue(c, "on", s.start + 0.3);
+export const MONO = "Consolas, 'Courier New', monospace";
+export const EMOJI = "'Segoe UI Emoji', 'Apple Color Emoji', sans-serif";
+export const dark: React.CSSProperties = {
   background: "rgba(14,16,24,.84)", border: "2px solid rgba(255,255,255,.16)", borderRadius: 32,
   boxShadow: "0 24px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12)", backdropFilter: "blur(16px)",
 };
 
 /** top y for a block of height hgt: voice-over → centred; "top" → above the head when it fits; else the chest band above captions */
-const place = (s: FxProps["s"], hgt: number, pref: "top" | "chest" = "chest", z = 1) => {
+export const place = (s: FxProps["s"], hgt: number, pref: "top" | "chest" = "chest", z = 1) => {
   if (isVo(s)) return 760 - hgt / 2;
   const h = headAt(s.id, z);
   if (pref === "top" && h.y0 - 30 - hgt >= 60) return h.y0 - 30 - hgt;
   return Math.min(1410 - hgt, h.y1 + 40);
 };
-const Over: React.FC<{ s: FxProps["s"]; z?: number; children: React.ReactNode }> = ({ s, z = 1, children }) => (
+export const Over: React.FC<{ s: FxProps["s"]; z?: number; children: React.ReactNode }> = ({ s, z = 1, children }) => (
   <AbsoluteFill><Vid s={s} z={z} />{children}</AbsoluteFill>
 );
-const Cursor: React.FC<{ x: number; y: number; down?: boolean }> = ({ x, y, down }) => (
+export const Cursor: React.FC<{ x: number; y: number; down?: boolean }> = ({ x, y, down }) => (
   <svg width={60} height={70} style={{ position: "absolute", left: x - 8, top: y - 4, transform: `scale(${down ? 0.85 : 1})`, filter: "drop-shadow(0 6px 10px rgba(0,0,0,.5))" }}>
     <path d="M8 4 L8 52 L20 40 L30 62 L38 58 L28 37 L46 37 Z" fill="#fff" stroke="#111" strokeWidth={3} strokeLinejoin="round" />
   </svg>

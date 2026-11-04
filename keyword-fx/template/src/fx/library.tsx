@@ -3,6 +3,7 @@ import { AbsoluteFill, Freeze, Img, random, staticFile } from "remotion";
 import { CREAM, HalfCard, ORANGE_BG } from "../kit2";
 import { BVP, C, FPS, INK, MONT, STK, Sticker, life, pop, ramp } from "../ui";
 import { FX2 } from "./library2";
+import { FX3 } from "./library3";
 import { CmdPill, FxProps, HEAD, Matte, OrangeBg, Out, VO_SHIFT, Vid, cue, fitSize, headAt, isVo } from "./common";
 
 /* The keyword effects. Each reads its cue times from `c` (names listed in keywords.json → "cues") and its
@@ -619,5 +620,6 @@ export const FX: Record<string, React.FC<FxProps>> = {
   "photo-snap": PhotoSnap, "clone-crowd": CloneCrowd, "sticky-note": StickyNote, spotlight: Spotlight, "comment-pop": CommentPop,
   "end-wall": EndWall, "cta-circle": CtaCircle,
   ...FX2, // batch 2 (library2.tsx)
+  ...FX3, // batch 3 (library3.tsx)
 };
 export { CmdPill };

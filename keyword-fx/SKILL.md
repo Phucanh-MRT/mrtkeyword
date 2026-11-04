@@ -1,6 +1,6 @@
 ---
 name: keyword-fx
-description: "Dựng video dọc 9:16 tự động từ MỘT video quay người nói hoặc MỘT file âm thanh (giọng đọc): nghe lời, cắt khoảng lặng và chỗ vấp, chia đoạn theo câu, tự chọn hiệu ứng keyword hợp từng câu trong thư viện 206 keyword (40 đã có code: text-behind, locked-on, glass-graph, match-cut, task-list, messages, led-sign, face-scan, stamp-hit, photo-snap, comment-pop, punch-headline, countdown, progress-ring, poll, star-review, terminal-command, slot-word, strike-replace, confetti-milestone, hanging-sign, mind-map, milestone-timeline, cinema-bars, incoming-call, head-stickers, decode-word, ios-toggles, follow-click…), tự viết nội dung cho hiệu ứng, thêm phụ đề, nhạc nền, âm thanh hiệu ứng, ảnh bìa rồi render MP4. Dùng khi người dùng nói: /keyword-fx, dựng video này, làm video từ video quay / file ghi âm, chèn hiệu ứng keyword, /effects <tên>, edit theo keyword."
+description: "Dựng video dọc 9:16 tự động từ MỘT video quay người nói hoặc MỘT file âm thanh (giọng đọc): nghe lời, cắt khoảng lặng và chỗ vấp, chia đoạn theo câu, tự chọn hiệu ứng keyword hợp từng câu trong thư viện 169 hiệu ứng (62 đã có code: text-behind, kinetic-pop, word-slam, typewriter, locked-on, rec-frame, face-scan, photo-snap, spotlight, scribble, arrow-doodle, sticky-note, cross-out, check-stamp, glass-graph, glass-counter, glass-compare, glass-pie, glass-quote, price-tag, progress-bar, scoreboard, messages, task-list, ios-toggles, chat-bubble, comment-pop, ai-prompt, search-bar, bank-notify, like-burst, calendar-flip, match-cut, led-sign, stamp-hit, reel-orbit, clone-crowd, glitch-cut, neon-outline, film-grain, edit-timeline, countdown, cta-circle, follow-click, end-wall, punch-headline, progress-ring, poll, star-review, terminal-command, slot-word, strike-replace, confetti-milestone, hanging-sign, mind-map, milestone-timeline, cinema-bars, incoming-call, head-stickers, decode-word, name-bar, news-ticker), tự viết nội dung cho hiệu ứng, thêm phụ đề, nhạc nền, âm thanh hiệu ứng, ảnh bìa rồi render MP4. Dùng khi người dùng nói: /keyword-fx, dựng video này, làm video từ video quay / file ghi âm, chèn hiệu ứng keyword, /effects <tên>, edit theo keyword."
 ---
 
 # Keyword FX — đưa video hoặc âm thanh vào, ra video hoàn chỉnh
@@ -39,8 +39,8 @@ Nếu thiếu `$SK/tools/.venv` hoặc `$SK/template/node_modules`: báo ngườ
 
 ## Thư viện
 
-- `keywords.json` — 206 mục, mỗi mục: `effect`, `fits` (câu nói hợp), `status` (`built` = có code / `planned` = mới có mô tả), `layout`, `needs_matte`, `cues` (mốc cần + ý nghĩa), `params` (nội dung cần điền + giới hạn), `triggers`, `sfx`.
-- `template/src/fx/library.tsx`, `library2.tsx` — code 40 hiệu ứng; `fx/common.tsx` — phần dùng chung; `Main.tsx` — bộ dựng đọc `data.json`.
+- `keywords.json` — 206 mục (169 hiệu ứng khác nhau + 37 tên trùng đã gộp, `status: merged`, `alias_of` = keyword gốc — dùng tên nào cũng được), mỗi mục: `effect`, `fits` (câu nói hợp), `status` (`built` = có code / `planned` = mới có mô tả), `layout`, `needs_matte`, `cues` (mốc cần + ý nghĩa), `params` (nội dung cần điền + giới hạn), `triggers`, `sfx`.
+- `template/src/fx/library.tsx`, `library2.tsx`, `library3.tsx` — code 62 hiệu ứng; `fx/common.tsx` — phần dùng chung; `Main.tsx` — bộ dựng đọc `data.json`.
 - Chỉ dùng keyword `built`. Câu hợp một keyword `planned` → chọn keyword built gần nhất và báo người dùng; họ muốn thì dựng thêm (mục dưới).
 
 ## Đoạn chỉ có âm thanh
@@ -52,7 +52,7 @@ Nếu thiếu `$SK/tools/.venv` hoặc `$SK/template/node_modules`: báo ngườ
 
 ## Thêm keyword mới
 
-1. Viết component trong `template/src/fx/library2.tsx` theo khuôn `React.FC<FxProps>` (mốc bằng `cue(c, "ten", fallback)`, nội dung từ `p`, chữ to dùng `fitSize`, vị trí khối dùng `place`), thêm vào `FX2`.
+1. Viết component trong `template/src/fx/library3.tsx` theo khuôn `React.FC<FxProps>` (mốc bằng `cue(c, "ten", fallback)`, nội dung từ `p`, chữ to dùng `fitSize`, vị trí khối dùng `place`), thêm vào `FX3`.
 2. Đổi mục đó trong `keywords.json` sang `"status": "built"` và điền `layout`, `needs_matte`, `cues`, `params`, `triggers`, `sfx`.
 3. Kiểm ảnh tĩnh bằng một kế hoạch nhỏ trên dự án có sẵn trước khi dùng thật.
 

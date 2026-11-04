@@ -63,7 +63,10 @@ def main():
     # 4. mattes for the speaker segments whose keyword needs the speaker cut out
     plan = json.loads((prj / "work/plan.json").read_text(encoding="utf-8"))
     for f in plan["fx"]:
-        if REG.get(f["fx"], {}).get("needs_matte") or (f.get("params") or {}).get("img"):
+        meta = REG.get(f["fx"], {})
+        if meta.get("status") == "merged":
+            meta = REG.get(meta["alias_of"], {})
+        if meta.get("needs_matte") or (f.get("params") or {}).get("img"):
             src, out = pub / "clips" / f"{f['seg']}.mp4", pub / f"matte_{f['seg']}.webm"
             if src.exists() and not out.exists():  # voice segments have no clip -> no matte
                 run([PY, HERE / "matte.py", src, "--start", "0", "--end", f"{dur(src):.3f}", "--out", out])

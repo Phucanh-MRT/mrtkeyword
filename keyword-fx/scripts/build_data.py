@@ -76,6 +76,8 @@ def main():
     layouts = {}
     for f in plan["fx"]:
         sid, name = f["seg"], f["fx"]
+        if REG.get(name, {}).get("status") == "merged":  # a duplicate name -> the keyword it was merged into
+            name = REG[name]["alias_of"]
         meta = REG.get(name)
         if not meta or meta["status"] != "built":
             raise SystemExit(f"keyword '{name}' chưa được dựng — chọn keyword có status built trong keywords.json")

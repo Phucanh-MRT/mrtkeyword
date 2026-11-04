@@ -63,21 +63,84 @@
   "effect": "Từng chữ bật lên theo đúng nhịp giọng",
   "fits": "Câu nói nhanh, dồn dập",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "w1": "từ 1 được nói",
+   "w2": "từ 2",
+   "w3": "từ 3",
+   "w4": "từ 4 (tuỳ chọn)"
+  },
+  "params": {
+   "words": "≤ 4 từ, mỗi từ ≤ 10 ký tự, hiện đúng lúc nói"
+  },
+  "triggers": [
+   "nhanh",
+   "gọn",
+   "đẹp",
+   "rẻ",
+   "dễ"
+  ],
+  "sfx": [
+   [
+    "w1",
+    "pop"
+   ]
+  ]
  },
  "word-slam": {
   "group": "1. Chữ tương tác với người",
   "effect": "Một từ đập mạnh vào giữa màn hình kèm rung khung",
   "fits": "Từ khoá cần nhấn",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "hit": "từ đập xuống"
+  },
+  "params": {
+   "word": "một từ ≤ 10 ký tự",
+   "color": "màu chữ (mặc định vàng)"
+  },
+  "triggers": [
+   "bùm",
+   "đột phá",
+   "cực mạnh",
+   "sốc"
+  ],
+  "sfx": [
+   [
+    "hit",
+    "impact"
+   ]
+  ]
  },
  "typewriter": {
   "group": "1. Chữ tương tác với người",
   "effect": "Chữ tự gõ từng ký tự có con trỏ nháy",
   "fits": "Prompt, câu lệnh, định nghĩa",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "bắt đầu gõ"
+  },
+  "params": {
+   "text": "câu ≤ 40 ký tự",
+   "cps": "tốc độ gõ, ký tự/giây (18)"
+  },
+  "triggers": [
+   "gõ",
+   "viết",
+   "câu lệnh",
+   "prompt"
+  ],
+  "sfx": [
+   [
+    "on",
+    "click"
+   ]
+  ]
  },
  "highlight-swipe": {
   "group": "1. Chữ tương tác với người",
@@ -127,7 +190,26 @@
   "effect": "Viền REC, timecode, pin, khung 4 góc",
   "fits": "Vlog, hậu trường",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "khung quay bật"
+  },
+  "params": {
+   "label": "nhãn góc dưới ≤ 14 (4K · 30FPS)"
+  },
+  "triggers": [
+   "đang quay",
+   "quay",
+   "máy quay",
+   "hậu trường"
+  ],
+  "sfx": [
+   [
+    "on",
+    "click"
+   ]
+  ]
  },
  "face-scan": {
   "group": "2. Khung camera / HUD",
@@ -285,7 +367,27 @@
   "effect": "Mũi tên vẽ tay chỉ vào vật hoặc con số",
   "fits": "\"Nhìn vào đây\"",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "draw": "mũi tên vẽ ra"
+  },
+  "params": {
+   "label": "chữ viết tay ≤ 16 ký tự",
+   "side": "left | right"
+  },
+  "triggers": [
+   "đây này",
+   "nhìn này",
+   "chính là",
+   "chỗ này"
+  ],
+  "sfx": [
+   [
+    "draw",
+    "whoosh"
+   ]
+  ]
  },
  "sticky-note": {
   "group": "3. Nét vẽ tay",
@@ -334,14 +436,55 @@
   "effect": "Gạch chéo đỏ lên cách làm sai",
   "fits": "\"Đừng làm thế này\"",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thẻ hiện",
+   "cross": "gạch chéo"
+  },
+  "params": {
+   "text": "cách làm sai ≤ 24 ký tự",
+   "label": "nhãn đỏ ≤ 8 (SAI)"
+  },
+  "triggers": [
+   "sai lầm",
+   "đừng",
+   "không nên",
+   "cách cũ"
+  ],
+  "sfx": [
+   [
+    "cross",
+    "impact"
+   ]
+  ]
  },
  "check-stamp": {
   "group": "3. Nét vẽ tay",
   "effect": "Dấu tích xanh vẽ tay to giữa khung",
   "fits": "\"Đúng rồi\", hoàn thành",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "hit": "dấu tích hiện"
+  },
+  "params": {
+   "label": "chữ dưới dấu tích ≤ 18 ký tự"
+  },
+  "triggers": [
+   "đúng",
+   "chuẩn",
+   "xong",
+   "thành công",
+   "được rồi"
+  ],
+  "sfx": [
+   [
+    "hit",
+    "correct"
+   ]
+  ]
  },
  "sketch-frame": {
   "group": "3. Nét vẽ tay",
@@ -397,8 +540,8 @@
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Nhiều thẻ kính nổi quanh người, mỗi thẻ một con số",
   "fits": "Thành tích, hồ sơ",
-  "needs_matte": false,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "glass-bento"
  },
  "glass-counter": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
@@ -437,42 +580,175 @@
   "effect": "Hai cột trước / sau mọc lệch nhau",
   "fits": "\"Trước và sau khi dùng AI\"",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thẻ hiện",
+   "grow": "cột mọc"
+  },
+  "params": {
+   "a": "{label, value} cột trước",
+   "b": "{label, value} cột sau",
+   "unit": "đơn vị ≤ 8",
+   "delta": "nhãn xanh ≤ 10"
+  },
+  "triggers": [
+   "trước",
+   "sau",
+   "so với",
+   "gấp",
+   "tăng"
+  ],
+  "sfx": [
+   [
+    "grow",
+    "whoosh"
+   ]
+  ]
  },
  "glass-pie": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Biểu đồ tròn tự vẽ, tách một miếng",
   "fits": "Tỉ lệ, phần trăm",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "biểu đồ vẽ",
+   "slice": "miếng tách ra"
+  },
+  "params": {
+   "value": "phần trăm miếng chính",
+   "label": "nhãn miếng ≤ 18",
+   "rest": "nhãn phần còn lại (tuỳ chọn)"
+  },
+  "triggers": [
+   "phần trăm",
+   "tỉ lệ",
+   "chiếm",
+   "đa số"
+  ],
+  "sfx": [
+   [
+    "slice",
+    "pop"
+   ]
+  ]
  },
  "glass-quote": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Thẻ trích dẫn có avatar và tên người nói",
   "fits": "Feedback, lời khen",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thẻ trích dẫn hiện"
+  },
+  "params": {
+   "quote": "câu trích ≤ 60 ký tự",
+   "name": "tên người nói",
+   "role": "chức danh (tuỳ chọn)",
+   "avatar": "chữ avatar"
+  },
+  "triggers": [
+   "từng nói",
+   "câu nói",
+   "theo lời",
+   "trích"
+  ],
+  "sfx": [
+   [
+    "on",
+    "pop"
+   ]
+  ]
  },
  "price-tag": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Thẻ giá gạch ngang giá cũ, hiện giá mới",
   "fits": "Khuyến mãi, tiết kiệm",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thẻ giá hiện",
+   "cut": "gạch giá cũ"
+  },
+  "params": {
+   "old": "giá cũ (chữ)",
+   "new": "giá mới (chữ)",
+   "label": "nhãn ≤ 18 ký tự"
+  },
+  "triggers": [
+   "giá",
+   "miễn phí",
+   "giảm",
+   "chỉ còn",
+   "đồng"
+  ],
+  "sfx": [
+   [
+    "cut",
+    "pop"
+   ]
+  ]
  },
  "progress-bar": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Thanh tải chạy từ 0 đến 100%",
   "fits": "Tiến độ, đang làm",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thanh bắt đầu chạy",
+   "done": "chạy xong"
+  },
+  "params": {
+   "label": "việc đang làm ≤ 24 ký tự",
+   "value": "phần trăm cuối (100)"
+  },
+  "triggers": [
+   "đang tải",
+   "xử lý",
+   "tiến độ",
+   "hoàn thành"
+  ],
+  "sfx": [
+   [
+    "done",
+    "ding"
+   ]
+  ]
  },
  "scoreboard": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
   "effect": "Bảng lật số kiểu sân ga",
   "fits": "Xếp hạng, đếm ngược",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "bảng hiện",
+   "done": "số khoá xong"
+  },
+  "params": {
+   "value": "con số dạng chữ (vd 12.400)",
+   "label": "nhãn ≤ 20"
+  },
+  "triggers": [
+   "con số",
+   "đạt",
+   "lượt",
+   "tổng"
+  ],
+  "sfx": [
+   [
+    "done",
+    "ding"
+   ]
+  ]
  },
  "map-pin": {
   "group": "4. Thẻ kính, số liệu, biểu đồ",
@@ -578,7 +854,31 @@
   "effect": "Tin nhắn hiện dần kèm \"đang soạn…\"",
   "fits": "Đoạn hội thoại, kể chuyện",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "m1": "tin 1",
+   "m2": "tin 2",
+   "m3": "tin 3 (tuỳ chọn)",
+   "m4": "tin 4 (tuỳ chọn)"
+  },
+  "params": {
+   "name": "tên cuộc trò chuyện",
+   "msgs": "[{me: true|false, t}] ≤ 4, mỗi tin ≤ 34 ký tự"
+  },
+  "triggers": [
+   "nhắn",
+   "hỏi",
+   "trả lời",
+   "tin nhắn",
+   "chat"
+  ],
+  "sfx": [
+   [
+    "m1",
+    "pop"
+   ]
+  ]
  },
  "comment-pop": {
   "group": "5. Giao diện app giả lập",
@@ -642,28 +942,118 @@
   "effect": "Ô tìm kiếm tự gõ chữ rồi hiện kết quả",
   "fits": "\"Bạn cứ tìm…\"",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "type": "bắt đầu gõ",
+   "results": "kết quả hiện"
+  },
+  "params": {
+   "query": "từ khoá tìm ≤ 30",
+   "results": "≤ 3 kết quả, mỗi dòng ≤ 34"
+  },
+  "triggers": [
+   "tìm",
+   "google",
+   "tra",
+   "search"
+  ],
+  "sfx": [
+   [
+    "type",
+    "click"
+   ],
+   [
+    "results",
+    "pop"
+   ]
+  ]
  },
  "bank-notify": {
   "group": "5. Giao diện app giả lập",
   "effect": "Thông báo \"+5.000.000đ\" trượt xuống",
   "fits": "Thu nhập, chốt đơn",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "thông báo trượt xuống"
+  },
+  "params": {
+   "amount": "số tiền (số)",
+   "bank": "tên ngân hàng/ví ≤ 14",
+   "note": "nội dung ≤ 30"
+  },
+  "triggers": [
+   "tiền về",
+   "chuyển khoản",
+   "thu nhập",
+   "kiếm được",
+   "triệu"
+  ],
+  "sfx": [
+   [
+    "on",
+    "ding"
+   ]
+  ]
  },
  "like-burst": {
   "group": "5. Giao diện app giả lập",
   "effect": "Tim và like bung ra quanh người nói",
   "fits": "Tương tác, viral",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "tim bắt đầu bay"
+  },
+  "params": {
+   "icons": "≤ 3 emoji",
+   "count": "số lượt cuối (số)"
+  },
+  "triggers": [
+   "thích",
+   "like",
+   "tim",
+   "yêu thích",
+   "lượt"
+  ],
+  "sfx": [
+   [
+    "on",
+    "pop"
+   ]
+  ]
  },
  "calendar-flip": {
   "group": "5. Giao diện app giả lập",
   "effect": "Lịch lật từ ngày 1 tới ngày 30",
   "fits": "\"Sau 30 ngày…\", thử thách",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "lịch hiện",
+   "done": "dừng ở ngày cuối"
+  },
+  "params": {
+   "from": "ngày bắt đầu (1)",
+   "to": "ngày cuối (30)",
+   "label": "nhãn đầu lịch ≤ 14"
+  },
+  "triggers": [
+   "ngày",
+   "mỗi ngày",
+   "liên tục",
+   "tháng"
+  ],
+  "sfx": [
+   [
+    "done",
+    "ding"
+   ]
+  ]
  },
  "match-cut": {
   "group": "6. Bối cảnh & vật liệu thật",
@@ -790,8 +1180,8 @@
   "group": "6. Bối cảnh & vật liệu thật",
   "effect": "Bức tường sau lưng thành lưới ảnh đang trôi",
   "fits": "\"Rất nhiều mẫu, kết quả\"",
-  "needs_matte": true,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "profile-wall"
  },
  "billboard": {
   "group": "6. Bối cảnh & vật liệu thật",
@@ -845,8 +1235,8 @@
   "group": "7. Nhân bản & bay quanh người",
   "effect": "Thẻ giao diện (kịch bản, giọng, phụ đề) bay vòng",
   "fits": "Liệt kê việc AI làm được",
-  "needs_matte": true,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "reel-orbit"
  },
  "clone-crowd": {
   "group": "7. Nhân bản & bay quanh người",
@@ -936,15 +1326,33 @@
   "group": "8. Chuyển cảnh",
   "effect": "Giật zoom cứng vào mặt",
   "fits": "Câu chốt",
-  "needs_matte": false,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "punch-headline"
  },
  "glitch-cut": {
   "group": "8. Chuyển cảnh",
   "effect": "Tách màu RGB + sọc nhiễu vài khung rồi cắt",
   "fits": "Công nghệ, \"lỗi\"",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "hit": "khoảnh khắc nhiễu"
+  },
+  "params": {},
+  "triggers": [
+   "lỗi",
+   "sập",
+   "hỏng",
+   "bất ngờ",
+   "nhưng"
+  ],
+  "sfx": [
+   [
+    "hit",
+    "whoosh"
+   ]
+  ]
  },
  "iris-wipe": {
   "group": "8. Chuyển cảnh",
@@ -1026,7 +1434,26 @@
   "effect": "Hạt phim + viền tối + màu ấm",
   "fits": "Kể chuyện, hoài niệm",
   "needs_matte": false,
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "cues": {
+   "on": "màu phim bật"
+  },
+  "params": {
+   "stamp": "tem ngày kiểu máy cũ (tuỳ chọn)"
+  },
+  "triggers": [
+   "ngày xưa",
+   "kỷ niệm",
+   "hồi đó",
+   "năm ấy"
+  ],
+  "sfx": [
+   [
+    "on",
+    "whoosh"
+   ]
+  ]
  },
  "black-white-pop": {
   "group": "9. Màu, ánh sáng, chất phim",
@@ -1119,14 +1546,16 @@
   "effect": "Ảnh bìa hiện 0,5 giây đầu rồi nháy trắng vào video",
   "fits": "Mở đầu mọi video",
   "needs_matte": false,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "cover",
+  "note": "đã có sẵn trong Main.tsx: điền mục cover của plan.json"
  },
  "hook-shake": {
   "group": "10. Mở đầu, CTA & kết",
   "effect": "Sticker câu hỏi rung mạnh + zoom giật",
   "fits": "\"Bạn có biết…?\"",
-  "needs_matte": false,
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "punch-headline"
  },
  "countdown": {
   "group": "10. Mở đầu, CTA & kết",
@@ -1740,7 +2169,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Màu phim quét ngang khung, vệt sáng, hạt, nhãn LUT",
   "fits": "Mood",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "film-grain"
  },
  "log-grade-swipe": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1752,7 +2182,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Ô bình luận tự gõ dưới cằm, gửi, tim bay",
   "fits": "CTA",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "cta-circle"
  },
  "uninstall-glitch": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1764,7 +2195,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Cả cảnh thu vào màn hình điện thoại giữa phố đêm, UI reel, tim bay",
   "fits": "Đăng reel",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "phone-mockup"
  },
  "shortcut-rain": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1776,7 +2208,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Dấu SKIP lửa đập lên thẻ ý tưởng trên đầu, rung khung",
   "fits": "Bỏ qua",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "stamp-hit"
  },
  "rabbit-hole": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1794,13 +2227,15 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Phòng tối mở ra giấy chấm, người thành sticker viền trắng, thẻ hồ sơ được follow",
   "fits": "Giới thiệu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "sticker-cutout"
  },
  "check-pills-grid": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Nền giấy ô li, 3 video ghim sau người, con trỏ bấm 3 viên xanh",
   "fits": "Checklist",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "task-list"
  },
  "profile-wall": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1842,7 +2277,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "3 viên kính xếp dưới cằm, tích từng cái",
   "fits": "Checklist",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "task-list"
  },
  "slow-push": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1884,7 +2320,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Lưới bài Instagram sau đầu, một bài được khoanh và vuốt, số đếm tới 10.000",
   "fits": "Bằng chứng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "profile-wall"
  },
  "explainer-panel": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1896,7 +2333,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Nửa trên nền kem: bước, tiêu đề serif, cửa sổ bài viral; nửa dưới người nói",
   "fits": "Hướng dẫn",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "split-screen"
  },
  "three-cards-story": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1914,7 +2352,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "3 ảnh nghiêng xếp trên đầu, trượt đi, ảnh cuối phóng thành cảnh chính",
   "fits": "Câu chuyện",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "photo-stack"
  },
  "scene-switch": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1932,7 +2371,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Nháy trắng, nền xám, người bật ra viền sticker trắng + thẻ tên",
   "fits": "Giới thiệu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "sticker-cutout"
  },
  "chat-intro": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -1974,13 +2414,15 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Giật trái Trước, vệt sáng chỉnh màu, giật phải Sau",
   "fits": "So sánh",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "log-grade-swipe"
  },
  "stat-punch": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ kính đếm số rồi giật zoom vào hệ số nhân cam + vòng tay",
   "fits": "Số liệu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "glass-counter"
  },
  "weight-wave": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2010,7 +2452,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Con số quay từng cột như máy đánh bạc",
   "fits": "Số liệu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "scoreboard"
  },
  "name-underline": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2022,13 +2465,35 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Vạch cam dọc mọc cạnh mặt, tên + chức danh trượt ra",
   "fits": "Giới thiệu",
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "needs_matte": false,
+  "cues": {
+   "on": "tên hiện"
+  },
+  "params": {
+   "name": "tên ≤ 20",
+   "role": "chức danh ≤ 30"
+  },
+  "triggers": [
+   "tôi là",
+   "mình là",
+   "tên",
+   "xin chào"
+  ],
+  "sfx": [
+   [
+    "on",
+    "whoosh"
+   ]
+  ]
  },
  "name-card-border": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ tên kính dưới cằm, vệt sáng chạy quanh viền",
   "fits": "Giới thiệu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "name-bar"
  },
  "falling-chart": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2052,7 +2517,30 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Nhãn LIVE cam + dòng tin chạy, thẻ tiêu đề quét bên dưới",
   "fits": "Tin tức",
-  "status": "planned"
+  "status": "built",
+  "layout": "full",
+  "needs_matte": false,
+  "cues": {
+   "on": "băng tin chạy vào"
+  },
+  "params": {
+   "tag": "nhãn ≤ 8 (LIVE)",
+   "headline": "tiêu đề ≤ 34",
+   "ticker": "dòng tin chạy"
+  },
+  "triggers": [
+   "tin",
+   "mới nhất",
+   "vừa",
+   "nóng",
+   "cập nhật"
+  ],
+  "sfx": [
+   [
+    "on",
+    "whoosh"
+   ]
+  ]
  },
  "curtain-reveal": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2112,19 +2600,22 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Khung máy quay STBY → REC, timecode, pin, ngày (gần rec-frame)",
   "fits": "Hậu trường",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "rec-frame"
  },
  "polaroid-snap": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Ảnh polaroid ghim tường, hiện dần, chữ tay (gần photo-snap)",
   "fits": "Kỷ niệm",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "photo-snap"
  },
  "vhs-tape": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Nhiễu tracking, lệch màu, sọc, PLAY, tem ngày (gần vhs-rewind)",
   "fits": "Hồi tưởng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "vhs-rewind"
  },
  "signature": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2142,13 +2633,15 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Lịch bóc cạnh đầu, từng tờ bay tới ngày quan trọng khoanh cam",
   "fits": "Mốc thời gian",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "calendar-flip"
  },
  "kinetic-words": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Chữ thường mờ-bật trên ngực, một từ vàng to sau đầu, giật zoom nhỏ",
   "fits": "Nhấn mạnh",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "kinetic-pop"
  },
  "warm-serif-note": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2172,7 +2665,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ hồ sơ dưới cằm: bấm follow, mở bình luận, gõ từ khoá, tim",
   "fits": "CTA",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "follow-click"
  },
  "code-scroll": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2184,13 +2678,15 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Màu ấm, 6 ô reel bay vòng phẳng, chữ serif vàng lấp lánh",
   "fits": "Bằng chứng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "reel-orbit"
  },
  "glass-tier-list": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Bảng S–D dưới cằm, chip trượt vào hàng, nhãn trạng thái",
   "fits": "Xếp hạng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "tier-list"
  },
  "top-three-chest": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2208,37 +2704,43 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ số TRƯỚC trên vai trái, lia nhanh sang thẻ SAU",
   "fits": "So sánh số",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "before-after-cards"
  },
  "grade-sweep": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Vệt sáng quét LOG thành màu điện ảnh kèm nhãn TRƯỚC/SAU",
   "fits": "Trước/sau màu",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "log-grade-swipe"
  },
  "rising-graph": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ kính rộng trên đầu: follower tăng, đường xanh đi lên",
   "fits": "Tăng trưởng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "glass-graph"
  },
  "giant-word": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Một từ khổng lồ trồi từ sau đầu, mờ → nét, bóng viền cam",
   "fits": "Hook",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "text-behind"
  },
  "ai-carousel-3d": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ video xoay vòng elip quanh người",
   "fits": "Bằng chứng",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "reel-orbit"
  },
  "freeze-arrow-note": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Đóng băng, nền xám, mũi tên tay cam chỉ vào người",
   "fits": "Nhấn mạnh",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "freeze-label"
  },
  "split-title-panel": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2250,7 +2752,8 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Giật zoom, tiêu đề hiện từng chữ trên đầu kèm gạch chân tay",
   "fits": "Hook",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "punch-headline"
  },
  "glass-widgets": {
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
@@ -2262,6 +2765,7 @@
   "group": "11. Bộ 122 hiệu ứng (bổ sung 11/2026)",
   "effect": "Thẻ to-do trên đầu tích theo nhịp, thanh tiến độ đầy",
   "fits": "Checklist",
-  "status": "planned"
+  "status": "merged",
+  "alias_of": "task-list"
  }
 }

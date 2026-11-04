@@ -22,7 +22,8 @@ REG = json.loads((SKILL / "keywords.json").read_text(encoding="utf-8"))
 BUILT = {k: v for k, v in REG.items() if v["status"] == "built" and k not in ("cta-circle", "end-wall")}
 # keywords drawn on the speaker's face/body: never on a voice segment (no speaker there)
 NO_VO = {"text-behind", "locked-on", "scribble", "reel-orbit", "edit-timeline", "face-scan", "neon-outline", "stamp-hit",
-         "clone-crowd", "spotlight", "end-wall", "cta-circle", "photo-snap"}  # photo-snap only with a picture (agent adds "img")
+         "clone-crowd", "spotlight", "end-wall", "cta-circle", "photo-snap",
+         "glitch-cut", "film-grain", "rec-frame", "arrow-doodle"}  # photo-snap only with a picture (agent adds "img")
 
 
 def fold(s):

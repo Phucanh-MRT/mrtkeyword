@@ -8,7 +8,17 @@
 
 ## Có gì bên trong
 
-- **206 keyword hiệu ứng**, trong đó **40 cái đã có code dùng ngay**: text-behind, locked-on, scribble, glass-graph, glass-counter, reel-orbit, match-cut, task-list, messages, led-sign, edit-timeline, face-scan, neon-outline, ai-prompt, stamp-hit, photo-snap, clone-crowd, sticky-note, spotlight, comment-pop, end-wall, cta-circle, punch-headline, countdown, progress-ring, poll, star-review, terminal-command, slot-word, strike-replace, confetti-milestone, hanging-sign, mind-map, milestone-timeline, cinema-bars, incoming-call, head-stickers, decode-word, ios-toggles, follow-click.
+- **169 hiệu ứng**, trong đó **62 cái đã có code, dùng được ngay**:
+
+  | Nhóm | Hiệu ứng |
+  |---|---|
+  | Chữ | text-behind, punch-headline, kinetic-pop, word-slam, typewriter, slot-word, strike-replace, decode-word |
+  | Khung máy quay, ánh sáng, màu | locked-on, rec-frame, face-scan, photo-snap, spotlight, neon-outline, cinema-bars, film-grain, glitch-cut |
+  | Vẽ tay | scribble, arrow-doodle, sticky-note, cross-out, check-stamp, head-stickers |
+  | Số liệu | glass-graph, glass-counter, glass-compare, glass-pie, progress-bar, progress-ring, scoreboard, confetti-milestone, countdown, calendar-flip, milestone-timeline, price-tag |
+  | Giao diện app | messages, task-list, ios-toggles, chat-bubble, comment-pop, ai-prompt, search-bar, bank-notify, like-burst, poll, star-review, glass-quote, terminal-command, incoming-call, follow-click, edit-timeline |
+  | Bối cảnh | match-cut, led-sign, stamp-hit, hanging-sign, mind-map, news-ticker, name-bar |
+  | Bay quanh người, kết | reel-orbit, clone-crowd, end-wall, cta-circle |
 - **Tự động hoàn toàn**: Claude tự chọn keyword cho từng câu và tự viết số liệu, checklist, bình luận, chữ trên con dấu… theo đúng lời bạn nói.
 - **Không chèn chữ lên mặt**: thẻ và sticker tự tránh khuôn mặt, phụ đề có vùng riêng.
 - **Dùng được cả khi chỉ có giọng đọc**: hiệu ứng tự đặt giữa màn hình trên nền màu.
@@ -46,7 +56,7 @@ Video xong nằm trong `Videos\Keyword FX\Thanh pham`, kèm ảnh bìa và gợi
 
 ## Muốn thêm hiệu ứng
 
-Còn 166 keyword trong `keyword-fx/keywords.json` đã có mô tả nhưng chưa có code. Bảo Claude: *"dựng keyword tier-list"*, Claude sẽ viết code, chạy thử rồi thêm vào thư viện.
+Còn 107 hiệu ứng trong `keyword-fx/keywords.json` đã có mô tả nhưng chưa có code. Bảo Claude: *"dựng keyword tier-list"*, Claude sẽ viết code, chạy thử rồi thêm vào thư viện.
 
 ## Gặp lỗi
 
