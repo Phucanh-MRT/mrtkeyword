@@ -6,6 +6,8 @@
 
 *Ảnh cắt từ hai video "Top 10 keyword tạo video trong Claude" dựng bằng bộ skill này. Bộ skill do [Phúc Anh MRT](https://phamphucanh.com) xây dựng và chia sẻ miễn phí.*
 
+📄 **Tài liệu đi kèm:** [100 Keyword hiệu ứng video với Claude](https://docs.google.com/document/d/1zt0e0Gv5IcFmuQtnSUIRmiASK_SCKOsfcjtmc7K_cR4/edit?usp=sharing) (Google Docs). Tài liệu mô tả từng keyword và cho biết nên dùng ở câu nào, kèm combo gợi ý cho video 60 giây và mẫu CTA.
+
 ## Có gì bên trong
 
 - **169 hiệu ứng**, trong đó **62 cái đã có code, dùng được ngay**:
@@ -71,7 +73,7 @@ Các ảnh dưới đây dựng từ một video thật. Khung có người là 
 $mrtkeyword dựng video D:\Video\bai-noi.mp4
 ```
 
-Bạn có thể thêm nhạc nền hoặc ảnh minh hoạ, ví dụ: *"/mrtkeyword dựng video này, nhạc nền là nhac.mp3, đoạn nói về sản phẩm thì chèn ảnh sanpham.png"*. Muốn xem ảnh trước khi xuất thì thêm *"gửi ảnh cho tôi duyệt trước"*.
+Bạn có thể thêm nhạc nền hoặc ảnh minh hoạ, ví dụ: *"/mrtkeyword dựng video này, nhạc nền là nhac.mp3, đoạn nói về sản phẩm thì chèn ảnh sanpham.png"*. Muốn xem ảnh trước khi xuất thì thêm *"gửi ảnh cho tôi duyệt trước"*. Muốn chọn hiệu ứng cho một câu cụ thể thì tra tên keyword trong [tài liệu 100 keyword](https://docs.google.com/document/d/1zt0e0Gv5IcFmuQtnSUIRmiASK_SCKOsfcjtmc7K_cR4/edit?usp=sharing), rồi nói thêm, ví dụ *"câu doanh thu tăng gấp 3 dùng glass-counter"*.
 
 Video xong nằm trong `Videos\Keyword FX\Thanh pham`, kèm ảnh bìa và gợi ý tiêu đề, caption Facebook và caption TikTok.
 
