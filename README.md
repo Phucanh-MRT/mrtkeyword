@@ -4,7 +4,7 @@
 
 ![Ví dụ hiệu ứng](examples/showcase.jpg)
 
-*Ảnh cắt từ hai video "Top 10 keyword tạo video trong Claude" dựng bằng bộ skill này.*
+*Ảnh cắt từ hai video "Top 10 keyword tạo video trong Claude" dựng bằng bộ skill này. Bộ skill do [Phúc Anh MRT](https://phamphucanh.com) xây dựng và chia sẻ miễn phí.*
 
 ## Có gì bên trong
 
@@ -86,3 +86,11 @@ Còn 107 hiệu ứng trong `mrtkeyword/keywords.json` đã có mô tả nhưng 
 - **`CAI-DAT.bat` báo thiếu winget**: cài "App Installer" từ Microsoft Store, rồi chạy lại.
 - **Báo FFmpeg chưa vào PATH**: đóng cửa sổ, nhấp đúp `CAI-DAT.bat` lần nữa.
 - **Gõ `/mrtkeyword` hoặc `$mrtkeyword` mà không nhận**: khởi động lại Claude hoặc Codex. Trong Codex, gõ `/skills` để xem skill đã được nạp chưa.
+
+## Về tác giả
+
+MRT Keyword do **Phúc Anh MRT** xây dựng trong quá trình làm video ngắn bằng AI mỗi ngày, rồi đóng gói lại để mọi người dùng chung.
+
+Nếu bạn muốn học cách dựng video bằng AI bài bản hơn, hoặc cần người làm cùng, có thể ghé [phamphucanh.com](https://phamphucanh.com). Các video hướng dẫn được đăng trên kênh YouTube [@PhucAnhMRT](https://www.youtube.com/@PhucAnhMRT).
+
+Bộ skill dùng được bình thường mà không cần đăng ký hay để lại thông tin gì. Nếu thấy hữu ích, hãy gửi cho một người bạn cũng đang làm video.
