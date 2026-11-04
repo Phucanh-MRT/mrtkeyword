@@ -23,6 +23,18 @@
 - **Không chèn chữ lên mặt**: thẻ và sticker tự tránh khuôn mặt, phụ đề có vùng riêng.
 - **Dùng được cả khi chỉ có giọng đọc**: hiệu ứng tự đặt giữa màn hình trên nền màu.
 
+### Demo hiệu ứng mới
+
+Các ảnh dưới đây dựng từ một video thật. Khung có người là đoạn quay, khung nền cam là đoạn chỉ có giọng đọc.
+
+![Demo đợt 3 — phần 1](examples/demo-dot-3a.jpg)
+
+*typewriter · word-slam · glass-quote · cross-out · chat-bubble · search-bar · arrow-doodle · check-stamp · glass-compare · progress-bar · kinetic-pop · news-ticker · rec-frame · like-burst*
+
+![Demo đợt 3 — phần 2](examples/demo-dot-3b.jpg)
+
+*film-grain · name-bar · bank-notify · glitch-cut · calendar-flip · price-tag · glass-pie · scoreboard*
+
 ## Cần có
 
 - Windows 10 hoặc 11, kết nối Internet, ổ cứng trống khoảng 10 GB.
