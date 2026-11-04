@@ -1,11 +1,11 @@
 ---
-name: keyword-fx
-description: "Dựng video dọc 9:16 tự động từ MỘT video quay người nói hoặc MỘT file âm thanh (giọng đọc): nghe lời, cắt khoảng lặng và chỗ vấp, chia đoạn theo câu, tự chọn hiệu ứng keyword hợp từng câu trong thư viện 169 hiệu ứng (62 đã có code: text-behind, kinetic-pop, word-slam, typewriter, locked-on, rec-frame, face-scan, photo-snap, spotlight, scribble, arrow-doodle, sticky-note, cross-out, check-stamp, glass-graph, glass-counter, glass-compare, glass-pie, glass-quote, price-tag, progress-bar, scoreboard, messages, task-list, ios-toggles, chat-bubble, comment-pop, ai-prompt, search-bar, bank-notify, like-burst, calendar-flip, match-cut, led-sign, stamp-hit, reel-orbit, clone-crowd, glitch-cut, neon-outline, film-grain, edit-timeline, countdown, cta-circle, follow-click, end-wall, punch-headline, progress-ring, poll, star-review, terminal-command, slot-word, strike-replace, confetti-milestone, hanging-sign, mind-map, milestone-timeline, cinema-bars, incoming-call, head-stickers, decode-word, name-bar, news-ticker), tự viết nội dung cho hiệu ứng, thêm phụ đề, nhạc nền, âm thanh hiệu ứng, ảnh bìa rồi render MP4. Dùng khi người dùng nói: /keyword-fx, dựng video này, làm video từ video quay / file ghi âm, chèn hiệu ứng keyword, /effects <tên>, edit theo keyword."
+name: mrtkeyword
+description: "Dựng video dọc 9:16 (TikTok, Reels, Shorts) tự động từ A đến Z từ MỘT video quay người nói hoặc MỘT file giọng đọc: nghe lời, cắt chỗ vấp và khoảng lặng, tự chọn hiệu ứng keyword cho từng câu (62 hiệu ứng có code), tự viết nội dung hiệu ứng, phụ đề, nhạc nền, âm thanh, ảnh bìa, render MP4. Dùng khi người dùng gọi /mrtkeyword hoặc $mrtkeyword, nói 'dựng video này', 'làm video từ video quay / file ghi âm', 'chèn hiệu ứng keyword', '/effects <tên>'. Không dùng để sửa video có sẵn hiệu ứng hay làm video ngang."
 ---
 
-# Keyword FX — đưa video hoặc âm thanh vào, ra video hoàn chỉnh
+# MRT Keyword — đưa video hoặc âm thanh vào, ra video hoàn chỉnh
 
-Trả lời bằng tiếng Việt. Người dùng chỉ cần đưa **một file**: video quay người nói (dọc hoặc ngang) hoặc âm thanh giọng đọc (mp3/wav/m4a). Nhạc nền, ảnh minh hoạ là tuỳ chọn.
+Skill này chạy trên **Claude Code** (gọi `/mrtkeyword`) và **Codex** (gọi `$mrtkeyword`); chỗ nào ghi "Agent" là trợ lý đang chạy skill. Trả lời bằng tiếng Việt. Người dùng chỉ cần đưa **một file**: video quay người nói (dọc hoặc ngang) hoặc âm thanh giọng đọc (mp3/wav/m4a). Nhạc nền, ảnh minh hoạ là tuỳ chọn.
 
 **Mặc định chạy thẳng từ A đến Z, không hỏi gì**: tự đặt tên dự án, tự chọn keyword, tự viết nội dung hiệu ứng, tự kiểm ảnh tĩnh và sửa lỗi, render, giao file. Chỉ dừng lại gửi ảnh tĩnh để duyệt khi người dùng nói muốn xem trước ("cho tôi duyệt", "gửi ảnh trước"). Không có nhạc nền thì làm không nhạc; không có lời kêu gọi trong video thì CTA mời theo dõi kênh. Trong lúc chạy, báo tiến độ ngắn gọn sau mỗi bước.
 
@@ -17,6 +17,8 @@ PRJ = "$OUT/<ten-video>"                      (tên kebab-case không dấu, t�
 ```
 
 Nếu thiếu `$SK/tools/.venv` hoặc `$SK/template/node_modules`: báo người dùng chạy lại `CAI-DAT.bat` trong thư mục gói, không tự cài thứ khác.
+
+**Chạy trên Codex**: mọi bước chạy được offline (mô hình và trình duyệt render đã tải sẵn khi cài). Nếu sandbox chặn ghi ra `%USERPROFILE%/Videos`, dùng `OUT = "<thư mục đang làm việc>/Keyword FX"` và báo người dùng đường dẫn; lệnh nào bị chặn thì xin người dùng duyệt chứ không tìm cách lách. Xem ảnh tĩnh ở bước 6 bằng công cụ xem ảnh của Codex.
 
 ## Quy trình
 

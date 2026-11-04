@@ -1,5 +1,5 @@
 # made by CAI-DAT.bat on each machine
-keyword-fx/tools/
+mrtkeyword/tools/
 node_modules/
 __pycache__/
 *.pyc

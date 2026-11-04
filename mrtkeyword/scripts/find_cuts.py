@@ -1,5 +1,5 @@
 """Propose an edit decision list (EDL) for a talking-head take: drop fillers, repeated words,
-false starts / retakes and long pauses. Claude reviews edl_review.txt and can override with
+false starts / retakes and long pauses. the agent reviews edl_review.txt and can override with
 --remove-words / --keep-words (word indices from the review) and rerun.
 
 usage: find_cuts.py <work_dir> [--max-gap 0.35] [--pad 0.08]

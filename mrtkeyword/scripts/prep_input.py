@@ -1,4 +1,4 @@
-"""Turn one recorded video (person talking) or one audio file (voice) into keyword-fx segments.
+"""Turn one recorded video (person talking) or one audio file (voice) into mrtkeyword segments.
 
 usage: prep_input.py <video-or-audio> <project dir> [--vocab "tên riêng, thuật ngữ"]
                      [--remove-words 12-18] [--keep-words 7-7] [--no-cut] [--denoise]

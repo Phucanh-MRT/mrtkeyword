@@ -1,4 +1,4 @@
-"""Set up <project>/remotion for a keyword-fx video: template, clips, audio, thumbs, face boxes, mattes, music.
+"""Set up <project>/remotion for a mrtkeyword video: template, clips, audio, thumbs, face boxes, mattes, music.
 
 usage: prepare_assets.py <project dir> [--music <file>]
 expects what prep_input.py made: <project>/clips/NN.mp4 (1080x1920 speaker segments; none for a voice-only

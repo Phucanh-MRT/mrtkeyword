@@ -1,7 +1,7 @@
-"""Shared paths and helpers for the keyword-fx scripts.
+"""Shared paths and helpers for the mrtkeyword scripts.
 
-Skill layout: keyword-fx/scripts (this folder) and keyword-fx/tools (Python venv + models, made by
-CAI-DAT.bat). Run every script with that venv: keyword-fx/tools/.venv/Scripts/python.exe <script> ...
+Skill layout: mrtkeyword/scripts (this folder) and mrtkeyword/tools (Python venv + models, made by
+CAI-DAT.bat). Run every script with that venv: mrtkeyword/tools/.venv/Scripts/python.exe <script> ...
 """
 import json
 import os

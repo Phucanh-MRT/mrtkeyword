@@ -1,10 +1,10 @@
-# Keyword FX - cai dat tu dong (Windows 10/11). Chay bang CAI-DAT.bat.
+# MRT Keyword - cai dat tu dong (Windows 10/11). Chay bang CAI-DAT.bat.
 # Cai: Node.js, Python 3.12, FFmpeg (qua winget, neu chua co) -> moi truong Python rieng cho skill
 # (faster-whisper, torch, opencv) -> mo hinh nghe loi + tach nguoi -> thu vien dung video (Remotion)
-# -> lien ket skill vao Claude (%USERPROFILE%\.claude\skills\keyword-fx).
+# -> lien ket skill (ten goi: mrtkeyword) vao Claude Code (%USERPROFILE%\.claude\skills) va Codex (%USERPROFILE%\.agents\skills).
 $ErrorActionPreference = "Stop"
 $Pkg   = Split-Path -Parent $MyInvocation.MyCommand.Path
-$Skill = Join-Path $Pkg "keyword-fx"
+$Skill = Join-Path $Pkg "mrtkeyword"
 $Tools = Join-Path $Skill "tools"
 $Venv  = Join-Path $Tools ".venv"
 $Py    = Join-Path $Venv "Scripts\python.exe"
@@ -69,21 +69,29 @@ $env:HF_HOME = Join-Path $Tools "models\hf"
 Step 7 "Thu vien dung video (Remotion)"
 Push-Location (Join-Path $Skill "template")
 npm install --no-audit --no-fund
+# the headless browser Remotion renders with is downloaded now, so rendering later needs no network
+# (Codex runs commands without network access by default)
+npx remotion browser ensure
 Pop-Location
 
-Step 8 "Lien ket skill vao Claude"
-$SkillsDir = Join-Path $env:USERPROFILE ".claude\skills"
-New-Item -ItemType Directory -Force $SkillsDir | Out-Null
-$Link = Join-Path $SkillsDir "keyword-fx"
-if (Test-Path $Link) {
-  $item = Get-Item $Link -Force
-  if ($item.LinkType -eq "Junction") { cmd /c rmdir "$Link" | Out-Null }
-  else { throw "Da co thu muc $Link (khong phai lien ket). Doi ten hoac xoa no roi chay lai." }
+Step 8 "Lien ket skill vao Claude Code va Codex"
+# Claude Code reads %USERPROFILE%\.claude\skills, Codex reads %USERPROFILE%\.agents\skills - same SKILL.md for both
+foreach ($dir in @(".claude\skills", ".agents\skills")) {
+  $SkillsDir = Join-Path $env:USERPROFILE $dir
+  New-Item -ItemType Directory -Force $SkillsDir | Out-Null
+  $Link = Join-Path $SkillsDir "mrtkeyword"
+  if (Test-Path $Link) {
+    $item = Get-Item $Link -Force
+    if ($item.LinkType -eq "Junction") { cmd /c rmdir "$Link" | Out-Null }
+    else { throw "Da co thu muc $Link (khong phai lien ket). Doi ten hoac xoa no roi chay lai." }
+  }
+  cmd /c mklink /J "$Link" "$Skill" | Out-Null
+  Write-Host "  $Link -> $Skill"
 }
-cmd /c mklink /J "$Link" "$Skill" | Out-Null
 New-Item -ItemType Directory -Force (Join-Path $env:USERPROFILE "Videos\Keyword FX\Thanh pham") | Out-Null
-Write-Host "  $Link -> $Skill"
 
 Write-Host ""
-Write-Host "XONG! Mo Claude (tab Code), gui video hoac file am thanh va go: /keyword-fx dung video nay" -ForegroundColor Green
+Write-Host "XONG! Gui video hoac file am thanh roi go:" -ForegroundColor Green
+Write-Host "  Claude Code:  /mrtkeyword dung video nay" -ForegroundColor Green
+Write-Host "  Codex:        `$mrtkeyword dung video <duong dan file>" -ForegroundColor Green
 Write-Host "Thanh pham nam trong: $env:USERPROFILE\Videos\Keyword FX\Thanh pham"
